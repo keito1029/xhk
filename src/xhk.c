@@ -346,6 +346,48 @@ int ProcessKeycode(XWindowsScreen_t * screen, int keycode, int up_flag)
         }
     }
 
+    /* start my code */
+    if(keycode == KEY_HENKAN) {
+        switch(space) {
+        case SPACE_STATE_START:
+            space = SPACE_STATE_PRESSED;
+            return -1; /* Change state but swallow the Space Input Event */
+
+        case SPACE_STATE_MODIFIED:
+			if(up_flag) {
+                /* Space released before any other key */
+                /* We discarded the original Space Down event, so provide one now */
+                SendKey(screen, keycode, true, CurrentTime);
+                space = SPACE_STATE_START;
+                return keycode; /* Space bar released, allow it to be pressed */
+            } 
+    		//else
+            //    return -1; /* Ignore and swallow repeated space down events */
+            //break;
+        }
+    }
+
+	if(keycode == KEY_MUHENKAN) {
+        switch(space) {
+        case SPACE_STATE_START:
+            space = SPACE_STATE_PRESSED;
+            return -1; /* Change state but swallow the Space Input Event */
+
+        case SPACE_STATE_MODIFIED:
+			if(up_flag) {
+                /* Space released before any other key */
+                /* We discarded the original Space Down event, so provide one now */
+                SendKey(screen, keycode, true, CurrentTime);
+                space = SPACE_STATE_START;
+                return keycode; /* Space bar released, allow it to be pressed */
+            } 
+			//else
+            //    return -1; /* Ignore and swallow repeated space down events */
+            //break;
+        }
+    }
+    /* end my code */
+
     /* Mirror the key once to prevent excess checking */
     mirrored_key = mirror_key(keycode);
     /* Determine if the key was modified by our mirror - Not all keys flip */

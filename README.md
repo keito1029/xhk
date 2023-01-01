@@ -7,6 +7,7 @@ This is a fork of the original @kbingham repository and was run using a 109 keyb
 
 Detail
 ------
+
 I use a 109 keyboard, but for my work I use the US keyboard layout on my system.
 In this case, the HENKAN and MUHENKAN keys work fine, but tab or space for HENKAN and ctrl+i or ctrl+u for MUHENKAN are sufficient.
 So I have decided to make these keys work as trigger keys for xhk mirroring, since I don't need them.
@@ -20,17 +21,17 @@ About Disabling Keys
 
 I use xmodmap to disable the HENKAN and MUHENKAN keys. It is recommended to save the default settings of xmodmap when disabling them.
 
-	xmodmap -pke > ~/.Xmodmap_your_default.
+ xmodmap -pke > ~/.Xmodmap_your_default
 
 Here is the command to disable.
 
-	xmodmap -e 'keycode 100='
-	xmodmap -e 'keycode 102='
+ xmodmap -e 'keycode 100='
+ xmodmap -e 'keycode 102='
 
 If I want to undo them, my default settings are as follows.
 
-	xmodmap -e 'Keycode 100 = Henkan_Mode NoSymbol Henkan_Mode'
-	xmodmap -e 'Keycode 102 = Muhenkan NoSymbol Muhenkan'
+ xmodmap -e 'Keycode 100 = Henkan_Mode NoSymbol Henkan_Mode'
+ xmodmap -e 'Keycode 102 = Muhenkan NoSymbol Muhenkan'
 
 Following Original Repository
 -----------------------------
@@ -61,6 +62,7 @@ sell physical keyboards which provide one-handed typing functionality -
 but these are expensive. Regardless of the price, I have a keyboard
 already attached to my Laptop - and plugging in an external keyboard
 isn’t really feasible when sat on the sofa; So I need a better solution
+
 - one which uses my existing keyboard. Now - again - there are a few
 software implementations of half-keyboard / mirrors using different
 methods, but not one for linux:
@@ -68,13 +70,13 @@ methods, but not one for linux:
 Alternative Software Solutions
 ------------------------------
 
--   [http://www.onehandkeyboard.org/] has both a Mac and Windows
+- [http://www.onehandkeyboard.org/] has both a Mac and Windows
     solution
--   <http://www.onehandkeyboard.org/linux-one-handed-keyboards/> does
+- <http://www.onehandkeyboard.org/linux-one-handed-keyboards/> does
     link to some other linux solutions - but they are either expired or
     not appropriate.
--   [http://warped.org/] has a version utilising AutoHotkeys for Windows
--   [http://blog.xkcd.com/] provides an XKB mapping - but can only use
+- [http://warped.org/] has a version utilising AutoHotkeys for Windows
+- [http://blog.xkcd.com/] provides an XKB mapping - but can only use
     the caps key as a modifier - and doesn’t meet my needs!
 
 My Solution
@@ -99,8 +101,7 @@ on how much use it gets.
     "XKCD MirrorBoard"
   [GitHub]: https://github.com/kbingham/xhk "xhk @ GitHub"
 
-
-
 This code is released under the GNU GPL v2 or later
 
 www.kieranbingham.co.uk
+
