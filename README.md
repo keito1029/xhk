@@ -21,17 +21,17 @@ About Disabling Keys
 
 I use xmodmap to disable the HENKAN and MUHENKAN keys. It is recommended to save the default settings of xmodmap when disabling them.
 
- xmodmap -pke > ~/.Xmodmap_your_default
+    xmodmap -pke > ~/.Xmodmap_your_default
 
 Here is the command to disable.
 
- xmodmap -e 'keycode 100='
- xmodmap -e 'keycode 102='
+    xmodmap -e 'keycode 100='
+    xmodmap -e 'keycode 102='
 
 If I want to undo them, my default settings are as follows.
 
- xmodmap -e 'Keycode 100 = Henkan_Mode NoSymbol Henkan_Mode'
- xmodmap -e 'Keycode 102 = Muhenkan NoSymbol Muhenkan'
+    xmodmap -e 'Keycode 100 = Henkan_Mode NoSymbol Henkan_Mode'
+    xmodmap -e 'Keycode 102 = Muhenkan NoSymbol Muhenkan'
 
 Following Original Repository
 -----------------------------
