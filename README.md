@@ -1,6 +1,42 @@
 [xHK] - An Xlib halfkeyboard implementation
 ===========================================
 
+Thanks to @kbingham, the author of the wonderful xhk.
+
+This is a fork of the original @kbingham repository and was run using a 109 keyboard set to US keyboard layout on the system．
+
+Detail
+------
+I use a 109 keyboard, but for my work I use the US keyboard layout on my system.
+In this case, the HENKAN and MUHENKAN keys work fine, but tab or space for HENKAN and ctrl+i or ctrl+u for MUHENKAN are sufficient.
+So I have decided to make these keys work as trigger keys for xhk mirroring, since I don't need them.
+Also, I have ctrl assigned to capslock, and I use the ctrl key (capslock) a lot during work.
+Therefore, I set it up so that mirroring works only by pressing the trigger key once instead of pressing it.
+The capslock is set to "ctrl" and the original ctrl is set to "enter" key.
+We are now considering whether to replace the enter key with tab(backspace).
+
+About Disabling Keys
+--------------------
+
+I use xmodmap to disable the HENKAN and MUHENKAN keys. It is recommended to save the default settings of xmodmap when disabling them.
+
+	xmodmap -pke > ~/.Xmodmap_your_default.
+
+Here is the command to disable.
+
+	xmodmap -e 'keycode 100='
+	xmodmap -e 'keycode 102='
+
+If I want to undo them, my default settings are as follows.
+
+	xmodmap -e 'Keycode 100 = Henkan_Mode NoSymbol Henkan_Mode'
+	xmodmap -e 'Keycode 102 = Muhenkan NoSymbol Muhenkan'
+
+Following Original Repository
+-----------------------------
+
+[kbingham/xhk: XLib HalfKeyboard implementation](https://github.com/kbingham/xhk#readme)
+
 Getting started
 ---------------
 

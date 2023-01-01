@@ -22,6 +22,7 @@
 #define XHK_LAYOUT_H_
 
 enum EN_GB_LAYOUT {
+
     KEY_ESC = 9,
     KEY_1 = 10,
     KEY_2,
@@ -35,6 +36,7 @@ enum EN_GB_LAYOUT {
     KEY_0,
 
     KEY_MINUS = 20,
+    KEY_EQUALS = 21,
     KEY_BACKSPACE = 22,
     KEY_TAB = 23,
 
@@ -49,8 +51,10 @@ enum EN_GB_LAYOUT {
     KEY_O,
     KEY_P,
 
+    KEY_LBRACKET = 34,
+    KEY_RBRACKET = 35,
     KEY_ENTER = 36,
-    KEY_CTRL  = 37,
+    KEY_CTRL  = 66,
 
     KEY_A = 38,
     KEY_S,
@@ -65,6 +69,7 @@ enum EN_GB_LAYOUT {
     KEY_AT,
     KEY_HASH,
 
+    KEY_APOSTROPHE = 48,
     KEY_GRAVE = 49,
     KEY_LSHIFT = 50,
     KEY_BSLASH = 51,
@@ -81,8 +86,15 @@ enum EN_GB_LAYOUT {
     KEY_FSLASH,
     KEY_RSHIFT,
 
+    KEY_F1 = 67,
+    KEY_F2 = 68,
+    KEY_F3 = 69,
+
     KEY_SPACE = 65,
-    KEY_CAPS = 66,
+    KEY_CAPS = 37,
+	KEY_HENKAN = 100,
+	KEY_MUHENKAN = 102,
+
 };
 
 
