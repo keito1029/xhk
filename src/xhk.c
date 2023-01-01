@@ -361,7 +361,7 @@ int ProcessKeycode(XWindowsScreen_t * screen, int keycode, int up_flag)
                 space = SPACE_STATE_START;
                 return keycode; /* Space bar released, allow it to be pressed */
             } 
-    		//else
+	    //else
             //    return -1; /* Ignore and swallow repeated space down events */
             //break;
         }
@@ -381,7 +381,7 @@ int ProcessKeycode(XWindowsScreen_t * screen, int keycode, int up_flag)
                 space = SPACE_STATE_START;
                 return keycode; /* Space bar released, allow it to be pressed */
             } 
-			//else
+	    //else
             //    return -1; /* Ignore and swallow repeated space down events */
             //break;
         }
