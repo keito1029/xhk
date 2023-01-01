@@ -92,8 +92,8 @@ enum EN_GB_LAYOUT {
 
     KEY_SPACE = 65,
     KEY_CAPS = 37,
-	KEY_HENKAN = 100,
-	KEY_MUHENKAN = 102,
+    KEY_HENKAN = 100,
+    KEY_MUHENKAN = 102,
 
 };
 
