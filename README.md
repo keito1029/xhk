@@ -14,7 +14,7 @@ So I have decided to make these keys work as trigger keys for xhk mirroring, sin
 Also, I have ctrl assigned to capslock, and I use the ctrl key (capslock) a lot during work.
 Therefore, I set it up so that mirroring works only by pressing the trigger key once instead of pressing it.
 The capslock is set to "ctrl" and the original ctrl is set to "enter" key.
-We are now considering whether to replace the enter key with tab(backspace).
+I also used the notify-send command to notify me when xhk is enabled/disabled. I am using Ubuntu 20.04LTS, and the "-t" option (--expire-time) did not seem to work for the notify-send command, so I set the timeout to 500ms using [Notification Timeout](https://extensions.gnome.org/extension/3795/notification-timeout/) in the gnome-extension. The [Notification Banner Reloaded](https://extensions.gnome.org/extension/4651/notification-banner-reloaded/) was used to place both horizontal and vertical position at the center of the display.
 
 About Disabling Keys
 --------------------
