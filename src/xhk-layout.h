@@ -23,7 +23,7 @@
 
 enum EN_GB_LAYOUT {
 
-    KEY_ESC = 9,
+    KEY_ESC,
     KEY_1 = 10,
     KEY_2,
     KEY_3,
