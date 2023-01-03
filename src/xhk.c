@@ -264,10 +264,15 @@ int mirror_key(int keycode)
     case KEY_TAB:
         keycode = KEY_BACKSPACE;
         break;
+//	case KEY_ENTER:
+//        //keycode = KEY_TAB;
+//        //keycode = KEY_BACKSPACE;
+//        //keycode = KEY_CAPS;
+//        break;
 
-    case KEY_ENTER:
-        keycode = KEY_CAPS;
-        break;
+//    case KEY_ENTER:
+//        keycode = KEY_CAPS;
+//        break;
     case KEY_CAPS:
         keycode = KEY_ENTER;
         break;
@@ -324,37 +329,39 @@ int ProcessKeycode(XWindowsScreen_t * screen, int keycode, int up_flag)
      * 			-> Start	-> Pressed	-> Modified
      */
 
-    if(keycode == KEY_SPACE) {
-        switch(space) {
-        case SPACE_STATE_START:
-            space = SPACE_STATE_PRESSED;
-            return -1; /* Change state but swallow the Space Input Event */
-        case SPACE_STATE_PRESSED:
-            if(up_flag) {
-                /* Space released before any other key */
-                /* We discarded the original Space Down event, so provide one now */
-                SendKey(screen, keycode, true, CurrentTime);
-                space = SPACE_STATE_START;
-                return keycode; /* Space bar released, allow it to be pressed */
-            } else
-                return -1; /* Ignore and swallow repeated space down events */
-            break;
-        case SPACE_STATE_MODIFIED:
-            if(up_flag)
-                space = SPACE_STATE_START;
-            return -1;
-        }
-    }
+//    if(keycode == KEY_SPACE) {
+//        switch(space) {
+//        case SPACE_STATE_START:
+//            space = SPACE_STATE_PRESSED;
+//            return -1; /* Change state but swallow the Space Input Event */
+//        case SPACE_STATE_PRESSED:
+//            if(up_flag) {
+//                /* Space released before any other key */
+//                /* We discarded the original Space Down event, so provide one now */
+//                SendKey(screen, keycode, true, CurrentTime);
+//                space = SPACE_STATE_START;
+//                return keycode; /* Space bar released, allow it to be pressed */
+//            } else
+//                return -1; /* Ignore and swallow repeated space down events */
+//            break;
+//        case SPACE_STATE_MODIFIED:
+//            if(up_flag)
+//                space = SPACE_STATE_START;
+//            return -1;
+//        }
+//    }
 
     /* start my code */
     if(keycode == KEY_HENKAN) {
         switch(space) {
         case SPACE_STATE_START:
+			system("notify-send --hint=int:transient:1 --hint=int:transient:1 -i '/usr/share/icons/Humanity/apps/48/administration.svg' 'xhk Enable' 'Mirror Keyboard' -t 300");
             space = SPACE_STATE_PRESSED;
             return -1; /* Change state but swallow the Space Input Event */
 
         case SPACE_STATE_MODIFIED:
 			if(up_flag) {
+				system("notify-send --hint=int:transient:1 -i '/usr/share/icons/Humanity/devices/48/computer.svg' 'xhk Disable' 'Return keyboard to normal' -t 300");
                 /* Space released before any other key */
                 /* We discarded the original Space Down event, so provide one now */
                 SendKey(screen, keycode, true, CurrentTime);
@@ -370,11 +377,14 @@ int ProcessKeycode(XWindowsScreen_t * screen, int keycode, int up_flag)
 	if(keycode == KEY_MUHENKAN) {
         switch(space) {
         case SPACE_STATE_START:
+			//system("notify-send --hint=int:transient:1 -i '/home/keito/xhk_dummy/media/3179193.png' 'Connect charger!' 'critical battery level, please connect chager' -t 300");
+			system("notify-send --hint=int:transient:1 --hint=int:transient:1 -i '/usr/share/icons/Humanity/apps/48/administration.svg' 'xhk Enable' 'Mirror Keyboard' -t 300");
             space = SPACE_STATE_PRESSED;
             return -1; /* Change state but swallow the Space Input Event */
 
         case SPACE_STATE_MODIFIED:
 			if(up_flag) {
+				system("notify-send --hint=int:transient:1 -i '/usr/share/icons/Humanity/devices/48/computer.svg' 'xhk Disable' 'Return keyboard to normal' -t 300");
                 /* Space released before any other key */
                 /* We discarded the original Space Down event, so provide one now */
                 SendKey(screen, keycode, true, CurrentTime);
@@ -791,4 +801,3 @@ int main(int argc, char **argv)
 
     return 0;
 }
-
